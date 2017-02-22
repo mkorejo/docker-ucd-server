@@ -1,2 +1,2 @@
-# docker-ucd-server
-IBM UrbanCode Deploy w/MySQL on Docker
+# docker-ucb-server
+Docker image for UrbanCode Build v6.1.2
