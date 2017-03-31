@@ -9,9 +9,10 @@ ENV HTTPS_PORT=8443 JMS_PORT=7918 MYSQL_PORT=3306 DB_NAME="ibm_ucd" \
 COPY install.properties /tmp
 COPY entrypoint.sh /ucd_entrypoint.sh
 
-RUN cd /tmp && curl -Lk $ARTIFACT_DOWNLOAD_URL > ucd-server.zip \
-  && curl -Lk https://goo.gl/xScbnv > mysql_jdbc.jar \
-  && unzip /tmp/ucd-server.zip \
+RUN curl -Lk $ARTIFACT_DOWNLOAD_URL > /tmp/ucd-server.zip \
+  && curl -Lk https://goo.gl/wTTngT > /tmp/mysql_jdbc.jar \
+  && unzip -d /tmp /tmp/ucd-server.zip \
+  && cat /tmp/ibm-ucd-install/install.properties | grep version >> /tmp/install.properties \
   && mv /tmp/install.properties /tmp/ibm-ucd-install/install.properties \
   && mv /tmp/mysql_jdbc.jar /tmp/ibm-ucd-install/lib/ext \
   && sed -i '85isync' /tmp/ibm-ucd-install/install-server.sh \

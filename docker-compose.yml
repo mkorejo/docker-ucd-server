@@ -12,11 +12,11 @@ services:
   ucd-server:
     image: mkorejo/ucd-server
     environment:
-      - DEPLOY_SERVER_HOSTNAME="104.198.206.107"
+      - DEPLOY_SERVER_HOSTNAME=<server-hostname-or-ip>
       - DB_HOST=ucd-db
       - ADMIN_PASSWORD=passw0rd
     ports:
-      - 9443:8443
+      - 8443:8443
       - 7918:7918
     depends_on:
       - ucd-db
