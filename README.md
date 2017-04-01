@@ -2,8 +2,6 @@
 
 Run [IBM UrbanCode Deploy](http://www-03.ibm.com/software/products/en/ucdep) on Docker. This repo contains instructions and the Dockerfile for [mkorejo/ucd-server](https://hub.docker.com/r/mkorejo/ucd-server/).
 
-<p align=center><img src="http://blog.nexright.com/wp-content/uploads/2016/03/Environment.png" width="590" height="260"/></p>
-
 #### Build the image
 To build the image you must specify `ARTIFACT_DOWNLOAD_URL` as a build argument and the value must be a direct link to the UrbanCode Deploy installation software. `docker build` downloads and extracts the UrbanCode Deploy installation software to create the image. UrbanCode Deploy is installed when the container is launched.
 ```

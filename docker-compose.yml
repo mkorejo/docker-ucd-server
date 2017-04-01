@@ -14,9 +14,10 @@ services:
     environment:
       - DEPLOY_SERVER_HOSTNAME=<server-hostname-or-ip>
       - DB_HOST=ucd-db
+      - HTTPS_PORT=9443
       - ADMIN_PASSWORD=passw0rd
     ports:
-      - 8443:8443
+      - 9443:9443
       - 7918:7918
     depends_on:
       - ucd-db

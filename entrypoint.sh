@@ -11,7 +11,6 @@ if [ "$1" = 'ucd' ]; then
   sed -i "s/\$DB_USER/$DB_USER/" /tmp/ibm-ucd-install/install.properties
   sed -i "s/\$DB_PASSWORD/$DB_PASSWORD/" /tmp/ibm-ucd-install/install.properties
   sed -i "s/\$ADMIN_PASSWORD/$ADMIN_PASSWORD/" /tmp/ibm-ucd-install/install.properties
-
   /tmp/ibm-ucd-install/install-server.sh
   exec /opt/ibm-ucd/server/bin/server run
 
